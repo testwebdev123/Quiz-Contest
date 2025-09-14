@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bangladesh Quiz Contest</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <div>
+          <div class="title">Bangladesh Quiz Contest</div>
+          <div class="muted" style="margin-top:6px">5 General Knowledge MCQs • 3 Players • Auto Leaderboard</div>
+        </div>
+        <div class="badge" id="timerBadge" title="Player time">00:00</div>
+      </div>
+      <div class="content">
+        <!-- Setup Screen -->
+        <section id="setupScreen">
+          <div class="grid grid-2">
+            <div>
+              <label class="pill">Player 1</label>
+              <input id="p1" class="input" placeholder="Enter player 1 name" />
+            </div>
+            <div>
+              <label class="pill">Player 2</label>
+              <input id="p2" class="input" placeholder="Enter player 2 name" />
+            </div>
+            <div>
+              <label class="pill">Player 3</label>
+              <input id="p3" class="input" placeholder="Enter player 3 name" />
+            </div>
+            <div>
+              <label class="pill">Contest Mode</label>
+              <select id="mode" class="input">
+                <option value="standard" selected>Standard (same 5 questions)</option>
+                <option value="shuffle">Shuffle per player (randomized order)</option>
+              </select>
+            </div>
+          </div>
+          <div class="footer">
+            <button class="btn" id="startBtn">Start Contest</button>
+            <button class="btn secondary" id="demoBtn" title="Fill demo names quickly">Use Demo Names</button>
+          </div>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quizScreen" class="hidden">
+          <div class="row" style="margin-bottom:10px">
+            <span class="pill" id="playerTag">Player: –</span>
+            <span class="pill" id="qProgress">Question 1/5</span>
+          </div>
+          <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+          <div style="height:14px"></div>
+          <div class="question" id="questionText">Question text…</div>
+          <div class="options" id="options"></div>
+          <div class="footer">
+            <button class="btn secondary" id="prevBtn">Previous</button>
+            <button class="btn" id="nextBtn">Next</button>
+            <button class="btn warn hidden" id="submitBtn">Submit Answers</button>
+          </div>
+        </section>
+
+        <!-- Result Screen (per player) -->
+        <section id="playerResultScreen" class="hidden">
+          <div class="row" style="margin-bottom:8px">
+            <div class="title" style="font-size:22px">Round Complete</div>
+            <span class="pill" id="roundTime">Time: 00:00</span>
+          </div>
+          <p class="muted" id="roundSummary">Great job!</p>
+          <div class="footer">
+            <button class="btn" id="nextPlayerBtn">Next Player</button>
+          </div>
+        </section>
+
+        <!-- Final Leaderboard -->
+        <section id="leaderboardScreen" class="hidden">
+          <div class="title" style="font-size:22px; margin-bottom:8px">Final Leaderboard</div>
+          <div id="leaderboard"></div>
+          <div class="footer">
+            <button class="btn" id="playAgainBtn">Play Again</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+<script src="js/custom.js"></script>
+</body>
+</html>
